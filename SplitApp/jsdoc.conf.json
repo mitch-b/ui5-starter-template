@@ -1,0 +1,11 @@
+{
+  "source": {
+    "include": [ "./app/" ],
+    "exclude": [],
+    "includePattern": ".+\\.js(doc)?$"
+  },
+  "opts": {
+    "recurse": true,
+    "destination": "./dist/jsdoc"
+  }
+}

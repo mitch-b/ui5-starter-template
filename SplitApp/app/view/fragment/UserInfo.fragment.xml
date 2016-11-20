@@ -1,0 +1,45 @@
+<core:FragmentDefinition
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core">
+  <ResponsivePopover
+    title="{i18n>titleUserInfo}"
+    class="sapUiPopupWithPadding"
+    width="70%">
+    <beginButton>
+      <Button text="{i18n>OK}" press="onCloseUserInfo" />
+    </beginButton>
+    <content>
+      <List
+        headerText="Roles for {user>/UserID}:"
+        noDataText="{i18n>noRolesText}"
+        items="{user>/UserRoles}">
+        <items>
+          <StandardListItem
+            title="{user>Name}"
+            description="{user>Description}"
+            tooltip="{user>Description}"/>
+        </items>
+      </List>
+      <List
+        headerText="{i18n>roleSwitcherTitle}"
+        visible="{:= ${user>/IsAdministrator} }">
+        <InputListItem label="Read Only">
+          <Switch state="{user>/IsReadOnly}" />
+        </InputListItem>
+        <InputListItem label="Administrator">
+          <Switch state="{user>/IsAdministrator}" />
+        </InputListItem>
+      </List>
+      <Bar>
+        <contentLeft>
+          <Label 
+            text="{i18n>appVersionLbl}:"
+            design="Bold">
+          </Label>
+          <Text 
+            text="{appConfig>/version}" />
+        </contentLeft>
+      </Bar>
+    </content>
+  </ResponsivePopover>
+</core:FragmentDefinition>

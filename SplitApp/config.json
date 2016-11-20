@@ -1,0 +1,17 @@
+{
+  "appId": 1234,
+  "version": "unidentified",
+  "rootUrl": "/",
+  "local": {
+    "service": "https://cors-anywhere.herokuapp.com/services.odata.org/V2/(S(sapuidemotdg))/OData/OData.svc/"
+  },
+  "dev": {
+    "service": "//services.odata.org/V2/(S(sapuidemotdg))/OData/OData.svc/"
+  },
+  "qa": {
+    "service": "//services.odata.org/V2/(S(sapuidemotdg))/OData/OData.svc/"
+  },
+  "prod": {
+    "service": "https://cors-anywhere.herokuapp.com/services.odata.org/V2/(S(sapuidemotdg))/OData/OData.svc/"
+  }
+}

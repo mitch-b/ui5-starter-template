@@ -1,0 +1,65 @@
+<mvc:View
+		controllerName="replace.namespace.controller.Detail"
+		xmlns="sap.m"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:semantic="sap.m.semantic">
+
+	<semantic:DetailPage
+			id="page"
+			navButtonPress="onNavBack"
+			showNavButton="{device>/system/phone}"
+			title="{i18n>detailTitle}"
+			busy="{supplierView>/busy}"
+			busyIndicatorDelay="{supplierView>/delay}">
+
+		<semantic:content>
+			<ObjectHeader
+					id="objectHeader"
+					title="{Name}"
+					number="{ID}"
+					numberUnit="Supplier ID">
+			</ObjectHeader>
+			<Table
+					id="productList"
+					width="auto"
+					items="{Products}"
+					updateFinished="onListUpdateFinished"
+					noDataText="{i18n>detailProductTableNoDataText}"
+					busyIndicatorDelay="{supplierView>/productTableDelay}"
+					class="sapUiResponsiveMargin">
+				<headerToolbar>
+					<Toolbar id="productToolbar">
+						<Title
+								id="productHeader"
+								text="{supplierView>/productListTitle}"/>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column>
+						<Text text="{i18n>detailProductTableNameColumn}"/>
+					</Column>
+					<Column
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							hAlign="Right">
+						<Text text="{i18n>detailProductTablePriceColumn}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<ObjectIdentifier
+									title="{Name}"
+									text="{ID}"/>
+							<ObjectNumber
+								number="{Price}"
+								unit="$"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</semantic:content>
+
+	</semantic:DetailPage>
+
+</mvc:View>

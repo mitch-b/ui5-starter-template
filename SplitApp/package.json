@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "dependencies": {
+    "gulp": "latest",
+    "gulp-if": "latest",
+    "gulp-rename": "latest",
+    "gulp-shell": "latest",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "latest",
+    "jsdoc": "latest",
+    "moment": "latest",
+    "rimraf": "latest"
+  },
+  "author": "",
+  "license": ""
+}
